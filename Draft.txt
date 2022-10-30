@@ -1,0 +1,66 @@
+
+Bitcoin tracker
+
+1. Use Laravel 7+ to create a site that has a page showing graphics collected using the Bitfinex API and tracks the bitcoin trades compared to USD.
+
+2. Use vue.js or React to build a single page application and use Chart.js library to create the chart, or another similar library. 
+
+3. The chart should look something like this:
+
+6. Below the graphic add a web form that will enable the end user to enter and email and a price at which to be notified. 
+
+7. Each time the price goes above the limit set by the user, he should be notifiedvia email. 
+
+8. The email should state that the price of BTC has exceeded the limit of X USD.
+
+
+D. You must consume the API of Bitfinex and create a job that will periodically collect the information and store it in a local database, 
+    so the chart can be created from that data. 
+
+D. The bitfinex endpoint you must use is: GET Ticker https://docs.bitfinex.com/v1/reference#rest-public-ticker
+
+    https://api.bitfinex.com/v1/pubticker/BTCUSD
+    https://laravel.com/docs/9.x/scheduling
+
+
+9. Take note of how much time it takes you to complete the project.
+
+    Hint: Use 3rd party components as much as possible in order to reduce development time. 
+    Follow best practices.
+    Tests.
+
+
+
+
+
+
+D. mysql 
+0. sendmail
+
+
+0. Laravel & phpunit
+D. Laravel Job scheduling
+0. Laravel Route
+    0. list
+    0. subscube: mail, price
+0. Laravel Controllers
+0. Laravel Models
+    D. Ticker
+    0. Subscribtion
+0. Laravel ORM
+0. Notifier
+
+
+0. React frontend setup
+0. React & Chart.js
+0. React routing
+0. React form
+
+
+
+
+php artisan schedule:work
+php artisan queue:work
+
+php artisan migrate
+php artisan migrate:reset
