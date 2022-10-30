@@ -48,11 +48,11 @@ class ProcessBitfinexTicker implements ShouldQueue
 
         if (!isset($ticker->id)) 
         {
-            throw new \Exception('Ticker isnt inserted. Please check!');
+            throw new \Exception('Ticker isnt inserted. Please check!', 500);
         }
 
-        // trigger event to notify users
-        // check the subscribers is it needed to notify someone
+        // todo: trigger event to notify users
+        // todo: check the subscribers is it needed to notify someone
         
         var_dump($ticker->id);
 

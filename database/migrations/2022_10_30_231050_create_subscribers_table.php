@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTickersTable extends Migration
+class CreateSubscribersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateTickersTable extends Migration
      */
     public function up()
     {
-        Schema::create('tickers', function (Blueprint $table) {
+        Schema::create('subscribers', function (Blueprint $table) {
             $table->id();
-            $table->float('bid', 7, 1);
-            $table->float('ask', 7, 1);
-            $table->float('low', 7, 1);
-            $table->float('high', 7, 1);
-            $table->float('last_price', 7, 1);
+            $table->string('email');
+            $table->float('price', 7, 1);
+            $table->boolean('notified');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateTickersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tickers');
+        Schema::dropIfExists('subscribers');
     }
 }
