@@ -11,6 +11,7 @@ use Illuminate\Queue\SerializesModels;
 
 use App\Models\Ticker;
 use App\Exchanges\Bitfinex;
+use App\Events\PriceUpdated;
 
 class ProcessBitfinexTicker implements ShouldQueue
 {
@@ -51,11 +52,6 @@ class ProcessBitfinexTicker implements ShouldQueue
             throw new \Exception('Ticker isnt inserted. Please check!', 500);
         }
 
-        // todo: trigger event to notify users
-        // todo: check the subscribers is it needed to notify someone
-        
-        var_dump($ticker->id);
-
-        return $ticker->id;
+        PriceUpdated::dispatch($ticker->last_price);
     }
 }
