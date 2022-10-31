@@ -22,3 +22,48 @@
 - Use 3rd party components as much as possible in order to reduce development time. 
 
 - Follow best practices.
+
+
+## Installation
+
+0. Set smtp mail settings in .env
+
+```
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=username
+MAIL_PASSWORD=password
+MAIL_ENCRYPTION=tls
+MAIL_FROM_NAME="${APP_NAME}"
+```
+
+1. Install project dependencies
+
+```
+composer install
+```
+
+2. Run migrations to setup database
+
+```
+php artisan migrate
+```
+
+3. Serve the backend
+
+```
+php artisan serve
+```
+
+4. Run the scheduler
+
+```
+php artisan schedule:work
+```
+
+5. Check the queue
+
+```
+php artisan queue:work
+```
