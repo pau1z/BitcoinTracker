@@ -57,7 +57,6 @@ class SymbolController extends Controller
         $subscriber = new Subscriber;
         $subscriber->email = $input['email'];
         $subscriber->price = $input['price'];
-        $subscriber->notified = false;
         $subscriber->save();
 
         if (!isset($subscriber->id)) 

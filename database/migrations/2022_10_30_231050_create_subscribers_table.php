@@ -16,9 +16,12 @@ class CreateSubscribersTable extends Migration
         Schema::create('subscribers', function (Blueprint $table) {
             $table->id();
             $table->string('email');
+            // $table->unique('email');
+            $table->index('email');
             $table->float('price', 7, 1);
-            $table->boolean('notified');
+            $table->index('price');
             $table->timestamps();
+            
         });
     }
 
