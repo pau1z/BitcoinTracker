@@ -26,7 +26,18 @@
 
 ## Installation
 
-0. Set smtp mail settings in .env
+0. Set mysql database settings in .env
+
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=bitcoin_tracker
+DB_USERNAME=username
+DB_PASSWORD=password
+```
+
+1. Set smtp mail settings in .env
 
 ```
 MAIL_MAILER=smtp
@@ -38,31 +49,31 @@ MAIL_ENCRYPTION=tls
 MAIL_FROM_NAME="${APP_NAME}"
 ```
 
-1. Install project dependencies
+2. Install project dependencies
 
 ```
 composer install
 ```
 
-2. Run migrations to setup database
+3. Run migrations to setup database
 
 ```
 php artisan migrate
 ```
 
-3. Serve the backend
+4. Serve the backend
 
 ```
 php artisan serve
 ```
 
-4. Run the scheduler
+5. Run the scheduler
 
 ```
 php artisan schedule:work
 ```
 
-5. Check the queue
+6. Check the queue
 
 ```
 php artisan queue:work
